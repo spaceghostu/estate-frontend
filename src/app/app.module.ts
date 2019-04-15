@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeLogger } from 'ngrx-store-logger';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
   imports: [
     BrowserModule,
     AppRoutingModule,
+    StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot({
       appReducer,
     }, {
