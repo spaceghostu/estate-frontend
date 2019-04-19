@@ -3,6 +3,11 @@
   "rulesDirectory": [
     "codelyzer"
   ],
+  "filesGlob": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "!node_modules/**"
+  ],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
