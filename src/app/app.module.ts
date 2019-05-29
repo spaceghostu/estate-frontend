@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { appReducer } from './app.reducer';
 import { environment } from '../environments/environment';
+import { HeaderComponent } from './header/header.component';
 
 export const debug = (reducer: ActionReducer<any>): ActionReducer<any> =>
   storeLogger()(reducer);
@@ -18,7 +19,8 @@ export const metaReducers: MetaReducer<any>[] = [debug];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -37,5 +39,6 @@ export const metaReducers: MetaReducer<any>[] = [debug];
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [HeaderComponent],
 })
 export class AppModule { }
