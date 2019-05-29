@@ -12,6 +12,7 @@ import { AppEffects } from './app.effects';
 import { appReducer } from './app.reducer';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
+import { PagesModule } from './pages/pages.module';
 
 export const debug = (reducer: ActionReducer<any>): ActionReducer<any> =>
   storeLogger()(reducer);
@@ -36,6 +37,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
       maxAge: 25,
       logOnly: environment.production,
     }),
+    PagesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
