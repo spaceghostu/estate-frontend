@@ -13,6 +13,7 @@ import { appReducer } from './app.reducer';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { PagesModule } from './pages/pages.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const debug = (reducer: ActionReducer<any>): ActionReducer<any> =>
   storeLogger()(reducer);
@@ -38,6 +39,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
       logOnly: environment.production,
     }),
     PagesModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
