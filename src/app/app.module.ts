@@ -12,7 +12,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { appReducer } from './app.reducer';
 import { environment } from '../environments/environment';
-import { HeaderComponent } from './header/header.component';
 import { PagesModule } from './pages/pages.module';
 import { MaterialsModule } from './materials/materials.module';
 import { ComponentsModule } from './components/components.module';
@@ -24,7 +23,6 @@ export const metaReducers: MetaReducer<any>[] = [debug];
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +46,6 @@ export const metaReducers: MetaReducer<any>[] = [debug];
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HeaderComponent],
+  exports: [],
 })
 export class AppModule { }
