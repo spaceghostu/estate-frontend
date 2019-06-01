@@ -4,6 +4,7 @@ import { StoreModule, ActionReducer, MetaReducer } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { storeLogger } from 'ngrx-store-logger';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,8 @@ import { appReducer } from './app.reducer';
 import { environment } from '../environments/environment';
 import { HeaderComponent } from './header/header.component';
 import { PagesModule } from './pages/pages.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialsModule } from './materials/materials.module';
+import { ComponentsModule } from './components/components.module';
 
 export const debug = (reducer: ActionReducer<any>): ActionReducer<any> =>
   storeLogger()(reducer);
@@ -26,6 +28,8 @@ export const metaReducers: MetaReducer<any>[] = [debug];
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialsModule,
     AppRoutingModule,
     StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot({
@@ -40,6 +44,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     }),
     PagesModule,
     BrowserAnimationsModule,
+    ComponentsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
