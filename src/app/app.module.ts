@@ -31,7 +31,7 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     AppRoutingModule,
     StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot({
-      appReducer,
+      app: appReducer,
     }, {
       metaReducers,
     }),
