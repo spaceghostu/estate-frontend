@@ -88,6 +88,11 @@ import {
     MatTreeModule,
     PortalModule,
     ScrollingModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
   ]
 })
 export class MaterialsModule { }

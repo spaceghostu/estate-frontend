@@ -16,7 +16,6 @@ import { PagesModule } from './pages/pages.module';
 import { MaterialsModule } from './materials/materials.module';
 import { ComponentsModule } from './components/components.module';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 export const debug = (reducer: ActionReducer<any>): ActionReducer<any> =>
   storeLogger()(reducer);
