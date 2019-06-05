@@ -21,7 +21,4 @@ export class AppComponent implements OnInit {
     this.store.dispatch(new AppInit());
   }
 
-  toggleSidebar() {
-    this.store.dispatch(new ToggleSidebar());
-  }
 }

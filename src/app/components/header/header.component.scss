@@ -33,6 +33,9 @@ a {
   &.active:hover {
     background: transparentize($color: #fff, $amount: 0.8);
   }
-
+  user-select: none;
   cursor: pointer;
+}
+mat-toolbar {
+  padding: 0;
 }
