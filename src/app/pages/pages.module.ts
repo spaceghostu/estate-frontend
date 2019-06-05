@@ -4,12 +4,14 @@ import { MaterialsModule } from './../materials/materials.module';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EstatesComponent } from './estates/estates.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     AboutComponent,
     DashboardComponent,
+    EstatesComponent,
   ],
   imports: [
     CommonModule,
@@ -19,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HomeComponent,
     AboutComponent,
     DashboardComponent,
+    EstatesComponent,
   ]
 })
 export class PagesModule { }
