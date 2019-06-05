@@ -13,7 +13,7 @@ export class TableComponent implements OnInit {
   dataSource: TableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['name', 'id', 'estate-no', 'will', 'will-date'];
 
   ngOnInit() {
     this.dataSource = new TableDataSource(this.paginator, this.sort);

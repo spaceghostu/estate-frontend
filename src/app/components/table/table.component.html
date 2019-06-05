@@ -4,6 +4,15 @@
          [dataSource]="dataSource"
          matSort
          aria-label="Elements">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header>Name</th>
+      <td mat-cell
+          *matCellDef="let row">{{row.name}}</td>
+    </ng-container>
+
     <!-- Id Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell
@@ -13,14 +22,33 @@
           *matCellDef="let row">{{row.id}}</td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <!-- Estate no Column -->
+    <ng-container matColumnDef="estate-no">
       <th mat-header-cell
           *matHeaderCellDef
-          mat-sort-header>Name</th>
+          mat-sort-header>Estate No</th>
       <td mat-cell
-          *matCellDef="let row">{{row.name}}</td>
+          *matCellDef="let row">{{row.estateNo}}</td>
     </ng-container>
+
+    <!-- Will Column -->
+    <ng-container matColumnDef="will">
+      <th mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header>Will</th>
+      <td mat-cell
+          *matCellDef="let row">{{row.hasWill}}</td>
+    </ng-container>
+
+    <!-- Will Date Column -->
+    <ng-container matColumnDef="will-date">
+      <th mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header>Will Date</th>
+      <td mat-cell
+          *matCellDef="let row">{{row.willDate}}</td>
+    </ng-container>
+
 
     <tr mat-header-row
         *matHeaderRowDef="displayedColumns"></tr>

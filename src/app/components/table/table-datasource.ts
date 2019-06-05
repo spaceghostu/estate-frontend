@@ -1,3 +1,4 @@
+import * as moment from 'moment';
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
@@ -7,30 +8,33 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export interface TableItem {
   name: string;
   id: number;
+  estateNo: number;
+  hasWill: boolean;
+  willDate: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: TableItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+  {id: 1, name: 'Hydrogen', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 2, name: 'Helium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 3, name: 'Lithium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 4, name: 'Beryllium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 5, name: 'Boron', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 6, name: 'Carbon', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 7, name: 'Nitrogen', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 8, name: 'Oxygen', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 9, name: 'Fluorine', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 10, name: 'Neon', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 11, name: 'Sodium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 12, name: 'Magnesium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 13, name: 'Aluminum', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 14, name: 'Silicon', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 15, name: 'Phosphorus', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 16, name: 'Sulfur', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 17, name: 'Chlorine', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 18, name: 'Argon', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 19, name: 'Potassium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
+  {id: 20, name: 'Calcium', estateNo: 18965416521, hasWill: true, willDate: moment().format('MMMM Do YYYY')},
 ];
 
 /**
