@@ -26,8 +26,8 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 2,
     name: 'Helium',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 3,
@@ -47,15 +47,15 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 5,
     name: 'Boron',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 6,
     name: 'Carbon',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 7,
@@ -68,8 +68,8 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 8,
     name: 'Oxygen',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 9,
@@ -82,8 +82,8 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 10,
     name: 'Neon',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 11,
@@ -110,8 +110,8 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 14,
     name: 'Silicon',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 15,
@@ -131,8 +131,8 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 17,
     name: 'Chlorine',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 18,
@@ -145,8 +145,8 @@ const EXAMPLE_DATA: TableItem[] = [
     id: 19,
     name: 'Potassium',
     estateNo: 18965416521,
-    hasWill: true,
-    willDate: moment().format('MMMM Do YYYY')
+    hasWill: false,
+    willDate: null,
   },
   {
     id: 20,

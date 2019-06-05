@@ -37,7 +37,15 @@
           *matHeaderCellDef
           mat-sort-header>Will</th>
       <td mat-cell
-          *matCellDef="let row">{{row.hasWill}}</td>
+          *matCellDef="let row">
+        <ng-container *ngIf="row.hasWill; then check; else cross"></ng-container>
+        <ng-template #check>
+          <i class="material-icons">check</i>
+        </ng-template>
+        <ng-template #cross>
+          <i class="material-icons">cross</i>
+        </ng-template>
+      </td>
     </ng-container>
 
     <!-- Will Date Column -->
@@ -49,6 +57,16 @@
           *matCellDef="let row">{{row.willDate}}</td>
     </ng-container>
 
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header>Actions</th>
+      <td mat-cell
+          *matCellDef="let row">
+        <button mat-button><i class="material-icons">create</i></button>
+      </td>
+    </ng-container>
 
     <tr mat-header-row
         *matHeaderRowDef="displayedColumns"></tr>
