@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EstatesComponent } from './estates/estates.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EstatesComponent } from './estates/estates.component';
   ],
   imports: [
     CommonModule,
-    MaterialsModule
+    MaterialsModule,
+    ComponentsModule,
   ],
   exports: [
     HomeComponent,
