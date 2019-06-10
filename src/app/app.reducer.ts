@@ -10,10 +10,7 @@ export const initialState: AppState = {
   sidebarOpen: true
 };
 
-export function appReducer(
-  state = initialState,
-  action: AppActions.Union
-): AppState {
+export function appReducer(state = initialState, action: AppActions.Union): AppState {
   switch (action.type) {
     case AppActions.ActionTypes.AppInit: {
       return {
@@ -24,8 +21,8 @@ export function appReducer(
     case AppActions.ActionTypes.ToggleSidebar: {
       return {
         ...state,
-        sidebarOpen: !state.sidebarOpen,
-      }
+        sidebarOpen: !state.sidebarOpen
+      };
     }
     default:
       return state;

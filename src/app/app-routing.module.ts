@@ -26,14 +26,11 @@ const routes: Routes = [
     component: EstatesComponent,
     data: { title: 'Estates' }
   },
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-exports: [RouterModule]
+  exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

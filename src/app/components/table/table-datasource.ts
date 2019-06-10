@@ -27,7 +27,7 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Helium',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 3,
@@ -48,14 +48,14 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Boron',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 6,
     name: 'Carbon',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Oxygen',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Neon',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 11,
@@ -111,7 +111,7 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Silicon',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 15,
@@ -132,7 +132,7 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Chlorine',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 18,
@@ -146,7 +146,7 @@ const EXAMPLE_DATA: TableItem[] = [
     name: 'Potassium',
     estateNo: 18965416521,
     hasWill: false,
-    willDate: null,
+    willDate: null
   },
   {
     id: 20,
@@ -177,11 +177,7 @@ export class TableDataSource extends DataSource<TableItem> {
   connect(): Observable<TableItem[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
-    const dataMutations = [
-      observableOf(this.data),
-      this.paginator.page,
-      this.sort.sortChange
-    ];
+    const dataMutations = [observableOf(this.data), this.paginator.page, this.sort.sortChange];
 
     // Set the paginator's length
     this.paginator.length = this.data.length;

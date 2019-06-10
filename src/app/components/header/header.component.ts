@@ -9,14 +9,11 @@ import { ToggleSidebar } from '../../app.actions';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  constructor(private store: Store<AppState>) {}
 
-  constructor(private store: Store<AppState>) { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   toggleSidebar() {
     this.store.dispatch(new ToggleSidebar());
   }
-
 }

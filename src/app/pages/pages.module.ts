@@ -8,22 +8,8 @@ import { EstatesComponent } from './estates/estates.component';
 import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    AboutComponent,
-    DashboardComponent,
-    EstatesComponent,
-  ],
-  imports: [
-    CommonModule,
-    MaterialsModule,
-    ComponentsModule,
-  ],
-  exports: [
-    HomeComponent,
-    AboutComponent,
-    DashboardComponent,
-    EstatesComponent,
-  ]
+  declarations: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent],
+  imports: [CommonModule, MaterialsModule, ComponentsModule],
+  exports: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent]
 })
-export class PagesModule { }
+export class PagesModule {}
