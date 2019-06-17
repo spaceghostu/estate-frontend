@@ -5,5 +5,9 @@
         "paginator",
         "paginator's",
         "sidenav"
-    ]
+    ],
+    "tslint.configFile": "./tslint.json",
+    "tslint.ignoreDefinitionFiles": true,
+    "scss.lint.duplicateProperties": "warning",
+    "scss.lint.float": "error"
 }
