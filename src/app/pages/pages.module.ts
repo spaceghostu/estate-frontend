@@ -6,10 +6,12 @@ import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EstatesComponent } from './estates/estates.component';
 import { ComponentsModule } from '../components/components.module';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent],
-  imports: [CommonModule, MaterialsModule, ComponentsModule],
-  exports: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent]
+  declarations: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent, FormComponent],
+  imports: [CommonModule, MaterialsModule, ComponentsModule, ReactiveFormsModule],
+  exports: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent, FormComponent]
 })
 export class PagesModule {}
