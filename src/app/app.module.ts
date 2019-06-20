@@ -17,6 +17,7 @@ import { MaterialsModule } from './materials/materials.module';
 import { ComponentsModule } from './components/components.module';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule } from '@angular/material';
+import { EstatesModule } from './estates/estates.module';
 
 export const debug = (reducer: ActionReducer<any>): ActionReducer<any> => storeLogger()(reducer);
 export const metaReducers: MetaReducer<any>[] = [debug];
@@ -51,7 +52,8 @@ export const metaReducers: MetaReducer<any>[] = [debug];
     MatButtonModule,
     MatSelectModule,
     MatRadioModule,
-    MatCardModule
+    MatCardModule,
+    EstatesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
