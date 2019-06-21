@@ -1,12 +1,11 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
-import { TableDataSource } from './table-datasource';
 import { EstateState } from 'src/app/estates/+state/estate.reducer';
 import { Store } from '@ngrx/store';
 import { estateQuery } from '../../estates/+state/estate.selectors';
-import { Subscriber, Subscription, Observable } from 'rxjs';
-import { tap, map } from 'rxjs/operators';
 import { Entity } from '../../estates/+state/estate.reducer';
+import { LoadEstate } from '../../estates/+state/estate.actions';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'es-table',
@@ -23,11 +22,13 @@ export class TableComponent implements OnInit {
 
   constructor(private store: Store<EstateState>) {
     this.loaded$ = this.store.select(estateQuery.getLoaded);
-    this.loaded$.subscribe(loaded => {
+    this.loaded$.subscribe((loaded: boolean) => {
       if (loaded) {
         this.store.select(estateQuery.getAllEstate).subscribe(data => {
           this.dataSource = new MatTableDataSource(data);
         });
+      } else {
+        this.store.dispatch(new LoadEstate());
       }
     });
   }

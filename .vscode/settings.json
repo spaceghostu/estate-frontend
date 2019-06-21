@@ -2,10 +2,12 @@
     "workbench.colorTheme": "Github (rainglow)",
     "cSpell.words": [
         "datasource",
+        "jasminewd",
         "nrwl",
         "paginator",
         "paginator's",
-        "sidenav"
+        "sidenav",
+        "tslib"
     ],
     "tslint.configFile": "./tslint.json",
     "tslint.ignoreDefinitionFiles": true,

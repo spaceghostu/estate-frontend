@@ -10,13 +10,7 @@ import { LoadEstate } from '../../estates/+state/estate.actions';
   styleUrls: ['./estates.component.scss']
 })
 export class EstatesComponent implements OnInit {
-  estates$: Observable<EstateState>;
-
-  constructor(private store: Store<{ estate: EstateState }>) {
-    console.log('load estates');
-    this.store.dispatch(new LoadEstate());
-    this.estates$ = this.store.select(state => state.estate);
-  }
+  constructor() {}
 
   ngOnInit() {}
 }
