@@ -1,6 +1,12 @@
-import { AfterViewInit, Component, ViewChild, OnInit } from '@angular/core';
-import { MatPaginator, MatSort } from '@angular/material';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { TableDataSource } from './table-datasource';
+import { EstateState } from 'src/app/estates/+state/estate.reducer';
+import { Store } from '@ngrx/store';
+import { estateQuery } from '../../estates/+state/estate.selectors';
+import { Subscriber, Subscription, Observable } from 'rxjs';
+import { tap, map } from 'rxjs/operators';
+import { Entity } from '../../estates/+state/estate.reducer';
 
 @Component({
   selector: 'es-table',
@@ -10,12 +16,21 @@ import { TableDataSource } from './table-datasource';
 export class TableComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  dataSource: TableDataSource;
-
-  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  loaded$: Observable<boolean>;
   displayedColumns = ['name', 'id', 'estate-no', 'will', 'will-date', 'actions'];
+  dataSource: MatTableDataSource<Entity>;
+  dataSubscription: Subscription;
 
-  ngOnInit() {
-    this.dataSource = new TableDataSource(this.paginator, this.sort);
+  constructor(private store: Store<EstateState>) {
+    this.loaded$ = this.store.select(estateQuery.getLoaded);
+    this.loaded$.subscribe(loaded => {
+      if (loaded) {
+        this.store.select(estateQuery.getAllEstate).subscribe(data => {
+          this.dataSource = new MatTableDataSource(data);
+        });
+      }
+    });
   }
+
+  ngOnInit() {}
 }

@@ -163,9 +163,7 @@ const EXAMPLE_DATA: TableItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class TableDataSource extends DataSource<TableItem> {
-  data: TableItem[] = EXAMPLE_DATA;
-
-  constructor(private paginator: MatPaginator, private sort: MatSort) {
+  constructor(private data: TableItem[], private paginator: MatPaginator, private sort: MatSort) {
     super();
   }
 

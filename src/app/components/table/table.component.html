@@ -1,4 +1,9 @@
-<div class="mat-elevation-z8">
+<div class="loader"
+     *ngIf="!(loaded$ | async)">
+  <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>
+<div *ngIf="loaded$ | async"
+     class="mat-elevation-z8">
   <table mat-table
          class="full-width-table"
          [dataSource]="dataSource"
@@ -28,7 +33,7 @@
           *matHeaderCellDef
           mat-sort-header>Estate No</th>
       <td mat-cell
-          *matCellDef="let row">{{row.estateNo}}</td>
+          *matCellDef="let row">{{row.number}}</td>
     </ng-container>
 
     <!-- Will Column -->
@@ -38,7 +43,7 @@
           mat-sort-header>Will</th>
       <td mat-cell
           *matCellDef="let row">
-        <ng-container *ngIf="row.hasWill; then check; else cross"></ng-container>
+        <ng-container *ngIf="row.will; then check; else cross"></ng-container>
         <ng-template #check>
           <i class="material-icons">check</i>
         </ng-template>
@@ -54,7 +59,7 @@
           *matHeaderCellDef
           mat-sort-header>Will Date</th>
       <td mat-cell
-          *matCellDef="let row">{{row.willDate}}</td>
+          *matCellDef="let row">{{row.will?.date}}</td>
     </ng-container>
 
     <!-- Actions Column -->
@@ -74,10 +79,10 @@
         *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator #paginator
+  <!-- <mat-paginator #paginator
                  [length]="dataSource?.data.length"
                  [pageIndex]="0"
                  [pageSize]="10"
                  [pageSizeOptions]="[10, 50, 100, 250]">
-  </mat-paginator>
+  </mat-paginator> -->
 </div>
