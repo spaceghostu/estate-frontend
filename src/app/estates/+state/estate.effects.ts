@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Effect, Actions } from '@ngrx/effects';
-import { DataPersistence } from '@nrwl/angular';
+import { Effect, Actions, ofType } from '@ngrx/effects';
 
-import { EstatePartialState } from './estate.reducer';
-import { LoadEstate, EstateLoaded, EstateLoadError, EstateActionTypes } from './estate.actions';
+import { EstateLoaded, EstateLoadError, EstateActionTypes } from './estate.actions';
+import { HttpClient } from '@angular/common/http';
+import { map, switchMap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Injectable()
 export class EstateEffects {
-  @Effect() loadEstate$ = this.dataPersistence.fetch(EstateActionTypes.LoadEstate, {
-    run: (action: LoadEstate, state: EstatePartialState) => {
-      // Your custom REST 'load' logic goes here. For now just return an empty list...
-      return new EstateLoaded([]);
-    },
+  @Effect() loadEstates$ = this.actions$.pipe(
+    ofType(EstateActionTypes.LoadEstate),
+    switchMap(() =>
+      this.http.get('http://localhost:3000/api/v1/Estate').pipe(
+        map((response: any) => new EstateLoaded(response)),
+        catchError(error => of(new EstateLoadError(error)))
+      )
+    )
+  );
 
-    onError: (action: LoadEstate, error) => {
-      console.error('Error', error);
-      return new EstateLoadError(error);
-    }
-  });
-
-  constructor(private actions$: Actions, private dataPersistence: DataPersistence<EstatePartialState>) {}
+  constructor(private actions$: Actions, private http: HttpClient) {}
 }

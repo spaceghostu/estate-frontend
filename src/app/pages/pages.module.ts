@@ -8,10 +8,11 @@ import { EstatesComponent } from './estates/estates.component';
 import { ComponentsModule } from '../components/components.module';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent, FormComponent],
-  imports: [CommonModule, MaterialsModule, ComponentsModule, ReactiveFormsModule],
+  imports: [CommonModule, MaterialsModule, ComponentsModule, ReactiveFormsModule, HttpClientModule],
   exports: [HomeComponent, AboutComponent, DashboardComponent, EstatesComponent, FormComponent]
 })
 export class PagesModule {}

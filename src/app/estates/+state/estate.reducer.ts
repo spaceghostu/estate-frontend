@@ -11,13 +11,18 @@ export const ESTATE_FEATURE_KEY = 'estate';
  */
 
 /* tslint:disable:no-empty-interface */
-export interface Entity {}
+export interface Entity {
+  name: string;
+  id: number;
+  number: string;
+  will?: { date: string };
+}
 
 export interface EstateState {
-  list: Entity[]; // list of Estate; analogous to a sql normalized table
-  selectedId?: string | number; // which Estate record has been selected
-  loaded: boolean; // has the Estate list been loaded
-  error?: any; // last none error (if any)
+  list: Entity[];
+  selectedId?: string | number;
+  loaded: boolean;
+  error?: any;
 }
 
 export interface EstatePartialState {
