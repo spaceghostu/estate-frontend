@@ -2,7 +2,7 @@
      *ngIf="!(loaded$ | async)">
   <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
 </div>
-<div *ngIf="loaded$ | async"
+<div [class.hidden]="!(loaded$ | async)"
      class="mat-elevation-z8">
   <table mat-table
          class="full-width-table"
@@ -65,8 +65,7 @@
     <!-- Actions Column -->
     <ng-container matColumnDef="actions">
       <th mat-header-cell
-          *matHeaderCellDef
-          mat-sort-header>Actions</th>
+          *matHeaderCellDef>Actions</th>
       <td mat-cell
           *matCellDef="let row">
         <button mat-button><i class="material-icons">create</i></button>
@@ -79,10 +78,10 @@
         *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <!-- <mat-paginator #paginator
+  <mat-paginator #paginator
                  [length]="dataSource?.data.length"
                  [pageIndex]="0"
                  [pageSize]="10"
                  [pageSizeOptions]="[10, 50, 100, 250]">
-  </mat-paginator> -->
+  </mat-paginator>
 </div>
