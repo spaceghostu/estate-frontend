@@ -4,6 +4,22 @@
 </div>
 <div [class.hidden]="!(loaded$ | async)"
      class="mat-elevation-z8">
+  <div class="toolbar">
+    <mat-form-field>
+      <input matInput
+             (keyup)="applyFilter($event.target.value)"
+             [value]="filterValue"
+             placeholder="Filter">
+      <button mat-button
+              *ngIf="filterValue"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="applyFilter('')">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
   <table mat-table
          class="full-width-table"
          [dataSource]="dataSource"
