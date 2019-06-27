@@ -6,7 +6,6 @@ import { estateQuery } from '../../estates/+state/estate.selectors';
 import { Entity } from '../../estates/+state/estate.reducer';
 import { LoadEstate } from '../../estates/+state/estate.actions';
 import { Observable } from 'rxjs';
-import { filter } from 'bluebird';
 
 @Component({
   selector: 'es-table',
